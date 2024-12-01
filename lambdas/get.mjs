@@ -11,6 +11,10 @@ export const handler = async (event) => {
   if (!fragranceName) {
     return {
       statusCode: 400,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // CORS header
+        "Access-Control-Allow-Headers": "Content-Type", // Optional for preflight
+      },
       body: JSON.stringify({ error: "Fragrance name is required" }),
     };
   }
@@ -29,11 +33,19 @@ export const handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data.Items),  // Return the matched items
+      headers: {
+        "Access-Control-Allow-Origin": "*", // CORS header
+        "Access-Control-Allow-Headers": "Content-Type", // Optional for preflight
+      },
+      body: JSON.stringify(data.Items), // Return the matched items
     };
   } catch (error) {
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // CORS header
+        "Access-Control-Allow-Headers": "Content-Type", // Optional for preflight
+      },
       body: JSON.stringify({ error: "Could not retrieve data", details: error.message }),
     };
   }
