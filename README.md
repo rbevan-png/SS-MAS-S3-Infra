@@ -8,6 +8,7 @@ This project provides a serverless REST API for storing and retrieving fragrance
 - **`get.mjs`**: Lambda function to handle GET requests to fetch fragrance data from DynamoDB.
 - **`seed.mjs`**: Lambda function to seed the DynamoDB table with initial fragrance data.
 - **`updateFragrance.mjs`**: Lambda function to handle POST requests for adding or updating fragrance data in DynamoDB.
+- **`getAllFragrances.mjs`**: Lambda function to handle GET requests to fetch all fragrance data from DynamoDB.
 - **`package.json` & `package-lock.json`**: Node.js dependencies, including the AWS SDK.
 
 ## Requirements
